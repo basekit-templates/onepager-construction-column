@@ -1,0 +1,168 @@
+﻿/* ----------------------------------------
+
+   Colour Swatches
+   ========================================
+   "color1": == Background
+   "color2": == Contrast colour
+   "color3": == Button colour
+   "color4": == Title colour
+   "color5": == Paragraph colour
+   "color6": == Nav text colour
+   "color7": == Header BG colour
+
+   Font Swatches
+   ========================================
+   "font1":  == Heading 1
+   "font2":  == Heading 2
+   "font3":  == Heading 3
+   "font4":  == Heading 4
+   "font5":  == Paragraph
+   "font6":  == Navigation Text
+   "font7":  == Buttons
+   "font8":  == Feature Title
+   "font9":  == Feature Subtitle
+   "font10": == Logo
+
+---------------------------------------- */
+
+body {}
+
+/* Wrapper
+======================================== */
+
+.wrapper {
+	width: 90%;
+	margin: 0 5%;
+	@media only screen and (min-width: 1140px) {
+		width: 1140px;
+		margin: 0 auto;
+	}
+}
+
+/* Navigation - Extended navigation (Widget)
+======================================== */
+
+nav.template-nav {
+	border-bottom: 1px solid darken(@color-swatch3,20%);
+	background-color: @color-swatch3;
+	&:empty {
+		border-bottom: 0;
+		background-color: transparent;
+	}
+}
+
+/* Header - Logo & Company Name (Widget)
+======================================== */
+
+header.template-header {
+	padding: 20px 0;
+	background-color: @color-swatch7;
+	border-bottom: 1px solid darken(@color-swatch7,10%);
+	.widget.logo,
+	.widget.companyname {
+		display: inline-block;
+		vertical-align: -webkit-baseline-middle;
+		vertical-align: middle;
+	}
+	.widget.logo {
+		a {
+			.logo {
+				img {
+					margin: 5px 15px 0 0;
+				}
+			}
+		}
+	}
+	.widget.companyname {
+		a {
+			color: @font-swatch6-color;
+		}
+	}
+}
+
+/* Home Twig - Feature (Widget)
+======================================== */
+
+.template-feature {
+	text-align: center;
+	.spare {
+		padding: 0 20px;
+	}
+}
+
+/* Main - Content
+======================================== */
+
+section.main-content {
+	padding: 40px 0;
+}
+
+/* Footer
+======================================== */
+
+footer.template-footer {
+	padding: 40px 0;
+	background-color: @color-swatch2;
+}
+
+/* Footer - Company Name (Widget)
+======================================== */
+
+footer.template-footer {
+	.widget.companyname {
+		a {
+			position: relative;
+			top: -2px;
+			font-size: bkscale(@font-swatch10-font-size, 0.8);
+			line-height: bkscale(@font-swatch10-line-height, 0.8);
+			color: @color-swatch3;
+		}
+	}
+}
+
+/* Tablet viewport */
+
+footer.template-footer {
+	@media @tablet {
+		.widget.companyname {
+			a {
+				font-size: bkscale(@font-swatch10-font-size, 0.6);
+				line-height: bkscale(@font-swatch10-line-height, 0.6);
+			}
+		}
+	}
+}
+
+/* Footer - Header/Address (Widget)
+======================================== */
+
+footer.template-footer {
+	.widget.content {
+		.bk-content-text {
+			h1, h2, h3, h4 {
+				color: @color-swatch3;
+			}
+			p {
+				color: darken(@color-swatch1,20%);
+			}
+		}
+	}
+}
+
+/* Footer - Address (Widget)
+======================================== */
+
+footer.template-footer {
+	.widget.companyaddress {
+		p.address,
+		p.address1,
+		p.address2,
+		p.postal-code,
+		p.country {
+			color: darken(@color-swatch1,20%);
+			&:empty {
+				display: none;
+			}
+		}
+	}
+}

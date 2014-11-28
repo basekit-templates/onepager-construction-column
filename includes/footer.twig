@@ -1,0 +1,25 @@
+<div class="template-map">
+	{{widget('map', 'template-map', {'height': '500', 'zoom': '15', 'address': 'profile'})|raw}}
+</div>
+
+<footer class="template-footer">
+
+	<div class="wrapper clearfix">
+		<div class="responsivecolumns columns-two-50-50">
+			<div class="column columns-two-left">
+				<div class="footer-companyname">
+					{{widget('companyname', 'footer-companyname', {"business": "profile"})|raw}}
+				</div>
+			</div>
+			<div class="column columns-two-right">
+				<div class="footer-header">
+					{{widget('content', 'footer-header', {content: '<h3>Yhteystiedot:</h3>', lines: 'all'})|raw}}
+				</div>
+				<div class="footer-companyaddress">
+					{{widget('companyaddress', 'footer-companyaddress', {})|raw}}
+				</div>
+			</div>
+		</div>
+	</div>
+	
+</footer>
